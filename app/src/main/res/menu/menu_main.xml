@@ -1,0 +1,41 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.projectuts.MenuActivity"
+    >
+    <item
+        android:id="@+id/cookies"
+        android:orderInCategory="100"
+        android:title="Cookies"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/cupcakes"
+        android:orderInCategory="100"
+        android:title="Cupcakes"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/brownies"
+        android:orderInCategory="100"
+        android:title="Brownis"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/donut"
+        android:orderInCategory="100"
+        android:title="Donut"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_logoutn"
+        android:orderInCategory="100"
+        android:title="Logout"
+        app:showAsAction="never"
+        />
+
+</menu>

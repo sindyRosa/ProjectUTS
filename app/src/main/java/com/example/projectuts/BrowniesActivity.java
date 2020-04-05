@@ -1,5 +1,6 @@
 package com.example.projectuts;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,7 +18,7 @@ import com.example.projectuts.models.session;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuActivity extends AppCompatActivity {
+public class BrowniesActivity extends AppCompatActivity {
     public static final String TRANSACTION_KEY = "TRANSACTION";
     public static final String INDEX_KEY = "INDEX";
     public static final int UPDATE_REQUEST = 2;
@@ -25,26 +26,22 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_brownies);
 
         RecyclerView teamsView = findViewById(R.id.rv_teams);
 
         List<TeamMenu> teams = new ArrayList<>();
-        teams.add(new TeamMenu("https://savoryspin.com/wp-content/uploads/2018/01/Easy-Oatmeal-Pancakes.jpg", "Pancakes"));
-        teams.add(new TeamMenu("https://savoryspin.com/wp-content/uploads/2018/03/Easy-Gluten-Free-Mocha-Oatmeal-Pancakes.jpg", "Chocolate Pancakes"));
-        teams.add(new TeamMenu("https://savoryspin.com/wp-content/uploads/2017/11/Goat-Cheese-Puff-Pastry-Stacks.jpg", "Cheese Puffs Pastry"));
-        teams.add(new TeamMenu("https://savoryspin.com/wp-content/uploads/2017/12/Easy-Spiced-Potato-Puff-Pastry-Baskets.jpg", "Potato Puffs Pastry"));
-        teams.add(new TeamMenu("https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_1771/https://savoryspin.com/wp-content/uploads/2019/08/Lemon-Blueberry-Muffin-Tops-Gluten-Free.jpg", "Lemon Murfin Blueberry"));
-        teams.add(new TeamMenu("https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_700/https://savoryspin.com/wp-content/uploads/2018/09/Japanese-Pumpkin-Bars.jpg", "Chocolate Chip Kabocha Bars"));
-        teams.add(new TeamMenu("https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_1576/https://savoryspin.com/wp-content/uploads/2019/12/Enjoying-Plant-Based-Apple-Pecan-Bread-With-Silk-1576x2048.jpg", "Apple Pecan Bread"));
-        teams.add(new TeamMenu("https://savoryspin.com/wp-content/uploads/2017/12/Easy-Spiced-Potato-Puff-Pastry-Baskets.jpg", "Spiced Potato"));
-        teams.add(new TeamMenu("https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_556/https://savoryspin.com/wp-content/uploads/2018/12/Gluten-Free-Ginger-Sweet-Potato-Cupcakes-With-Ginger-Frosting-556x690.jpg", "Gluten Sweet Cupcakes"));
-        teams.add(new TeamMenu("https://savoryspin.com/wp-content/uploads/2017/08/Pumpkin-Pecan-Muffins.jpg", "Pumpkin Pecan Muffins"));
-        teams.add(new TeamMenu("https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_850/https://savoryspin.com/wp-content/uploads/2019/04/AirFryer-Cinnamon-Cardamom-Cheesecake.jpg", "AirFryey Cheesecake"));
-        teams.add(new TeamMenu("https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_850/https://savoryspin.com/wp-content/uploads/2019/05/Gluten-Free-Chocolate-Orange-Airfryer-Cupcakes.jpg", "Chocolate Airfryey Cupcakes"));
-        teams.add(new TeamMenu("https://savoryspin.com/wp-content/uploads/2016/10/Date-Banana-Muffins.jpg", "Banana Muffins"));
-        teams.add(new TeamMenu("https://savoryspin.com/wp-content/uploads/2016/07/Blueberry-jicama-muffins-ggnoads.jpg", "Blueberry jicama Cupcakes"));
-        teams.add(new TeamMenu("https://savoryspin.com/wp-content/uploads/2017/03/Fruit-Filled-waffle-cups-with-cardamom-vanilla-coconut-cream.jpg", "Fruite vanilla Waffle"));
+        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2018/02/Fudgy-Brownies-The-Flavor-Bender-9-700x1048.jpg", "Fudgi Brownies"));
+        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2018/10/Fudgy-Pecan-Pie-Bars-1128.jpg", "Fudgi Pecan Brownies"));
+        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2016/12/Chocolate-peppermint-Rice-Krispie-treats-9638.jpg", "Chocolate Pappermint Brownies"));
+        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2015/08/Peanut-butter-Swirled-Fudgy-Chocolate-Brownie-Ice-Cream-Sandwiches-18108.jpg", "Fudgi Chocolate Brownies"));
+        teams.add(new TeamMenu("https://i2.wp.com/resepkoki.id/wp-content/uploads/2017/04/Resep-Brownies-Kukus.jpg?fit=1300%2C1300&ssl=1", "Brownies kukus chocolate"));
+        teams.add(new TeamMenu("https://www.rbshop.id/wp-content/uploads/2018/12/Brownis-RBSHOP-Rbshop.jpg", "Brownies chocolate Almond"));
+        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2014/08/Cosmic-Brownies-3.jpg", "Cosmic Brownies"));
+        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2014/06/Ultimate-Gooey-Brownies-04.jpg", "Ultimate Gooey Brownies"));
+        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2013/01/Espresso-Brownie-Bites.jpg", "Expresso Brownies"));
+        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2015/07/Cookie-Butter-Brownie-Ice-Cream-Sandwiches-03-FS-550x550.jpg", "Brownies Ice Cream Sandwich"));
+
 
         menuAdapter adapter = new menuAdapter(this, teams);
         teamsView.setAdapter(adapter);

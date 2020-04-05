@@ -10,6 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".CupcakesActivity"></activity>
+        <activity android:name=".DonutActivity"></activity>
+        <activity android:name=".BrowniesActivity"></activity>
         <activity android:name=".MenuActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

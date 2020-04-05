@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProjectUTS</string>
+    <string name="cookies">Cookies</string>
+    <item name="action_logout" type="id" />
+    <string name="action_sign_in_short" />
+    <string name="cupcakes" />
+    <string name="brownies" />
+    <string name="Donut" />
 </resources>

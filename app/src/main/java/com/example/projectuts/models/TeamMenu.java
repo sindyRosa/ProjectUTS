@@ -1,20 +1,20 @@
 package com.example.projectuts.models;
 
 public class TeamMenu {
-    public String logo;
+    public String image;
     public String name;
 
     public TeamMenu(String logo, String name) {
-        this.logo = logo;
+        this.image = logo;
         this.name = name;
     }
 
     public String getLogo() {
-        return logo;
+        return image;
     }
 
     public void setLogo(String logo) {
-        this.logo = logo;
+        this.image = logo;
     }
 
     public String getName() {
