@@ -12,9 +12,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".CupcakesActivity"></activity>
-        <activity android:name=".DonutActivity"></activity>
+        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".BrowniesActivity"></activity>
-        <activity android:name=".MenuActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

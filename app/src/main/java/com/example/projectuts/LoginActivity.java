@@ -38,7 +38,7 @@ class LoginActivity extends AppCompatActivity {
             if (session.isKeepUsername()) {
                 session.setUsername(username);
             }
-            Intent intent = new Intent(this, MenuActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
         } else {

@@ -31,17 +31,14 @@ public class CupcakesActivity extends AppCompatActivity {
         RecyclerView teamsView = findViewById(R.id.rv_teams);
 
         List<TeamMenu> teams = new ArrayList<>();
-        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2019/11/Halloween-Cupcakes-6444-780x1169.jpg", "Halloween Cupcakes"));
-        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2020/01/Swiss-Meringue-Buttercream-8527-699x1047.jpg", "Buttercream Cupcakes"));
-        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2016/12/Gingerbread-Cupcakes-with-Eggnog-Filling-0138.jpg", "Ginggerbread Cupcakes"));
-        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2016/03/Spiced-Banana-Cupcakes-with-Apricot-Frosting-8396-Copy.jpg", "Spiced Banana Cupcakes"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2012/08/Chocolate-Mint-Cupcakes-SQUARE.jpg", "Mint Chocolates Cupcakes"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2019/03/lemon-cupcakes-SQUARE.jpg", "Lemon Cupcakes"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2020/03/Homemade-Chocolate-Coconut-Cupcakes-SQUARE-1536x1536.jpg", "Chocolate Coconut Cupcakes"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2015/06/Salted-Caramel-Toffee-Cupcakes-square.jpg", "Salted Caramel Cupcakes"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2015/06/banana-split-cupcakes-square.jpg", "Banana Split Cupcakes"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2015/10/Caramel-Apple-Cupcakes-31-550x550.jpg", "Apple Caramel Cupcakes"));
-
+        TeamMenu tm = new TeamMenu(R.drawable.chocolatemintupcakes, "Brownis Activity", 18000);
+        teams.add(tm);
+        tm = new TeamMenu(R.drawable.gingerbreadcupcakes, "Chocolate Pappermint", 23000);
+        teams.add(tm);
+        tm = new TeamMenu(R.drawable.halloweencupcakes, "Fudgi Brownies", 25000);
+        teams.add(tm);
+        tm = new TeamMenu(R.drawable.spicedbananacupcakes, "Fudgi Pecan", 20000);
+        teams.add(tm);
         menuAdapter adapter = new menuAdapter(this, teams);
         teamsView.setAdapter(adapter);
 
@@ -62,11 +59,6 @@ public class CupcakesActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.cookies) {
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-            return true;
-        }
         if (id == R.id.cupcakes) {
             Intent intent = new Intent(this, CupcakesActivity.class);
             startActivity(intent);
@@ -77,23 +69,18 @@ public class CupcakesActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        if (id == R.id.donut) {
-            Intent intent = new Intent(this, DonutActivity.class);
-            startActivity(intent);
-            return true;
-        }
         else if (id == R.id.action_logout) {
             session.logout();
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
             finish();
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
     }
     public void onTransactionClicked(int index, Transaction item) {
-        Intent intent = new Intent(this, MenuActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra(TRANSACTION_KEY, item);
         intent.putExtra(INDEX_KEY, 0);
         startActivityForResult(intent, UPDATE_REQUEST);

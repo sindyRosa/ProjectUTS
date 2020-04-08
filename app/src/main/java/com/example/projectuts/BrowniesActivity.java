@@ -31,17 +31,14 @@ public class BrowniesActivity extends AppCompatActivity {
         RecyclerView teamsView = findViewById(R.id.rv_teams);
 
         List<TeamMenu> teams = new ArrayList<>();
-        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2018/02/Fudgy-Brownies-The-Flavor-Bender-9-700x1048.jpg", "Fudgi Brownies"));
-        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2018/10/Fudgy-Pecan-Pie-Bars-1128.jpg", "Fudgi Pecan Brownies"));
-        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2016/12/Chocolate-peppermint-Rice-Krispie-treats-9638.jpg", "Chocolate Pappermint Brownies"));
-        teams.add(new TeamMenu("https://www.theflavorbender.com/wp-content/uploads/2015/08/Peanut-butter-Swirled-Fudgy-Chocolate-Brownie-Ice-Cream-Sandwiches-18108.jpg", "Fudgi Chocolate Brownies"));
-        teams.add(new TeamMenu("https://i2.wp.com/resepkoki.id/wp-content/uploads/2017/04/Resep-Brownies-Kukus.jpg?fit=1300%2C1300&ssl=1", "Brownies kukus chocolate"));
-        teams.add(new TeamMenu("https://www.rbshop.id/wp-content/uploads/2018/12/Brownis-RBSHOP-Rbshop.jpg", "Brownies chocolate Almond"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2014/08/Cosmic-Brownies-3.jpg", "Cosmic Brownies"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2014/06/Ultimate-Gooey-Brownies-04.jpg", "Ultimate Gooey Brownies"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2013/01/Espresso-Brownie-Bites.jpg", "Expresso Brownies"));
-        teams.add(new TeamMenu("https://www.handletheheat.com/wp-content/uploads/2015/07/Cookie-Butter-Brownie-Ice-Cream-Sandwiches-03-FS-550x550.jpg", "Brownies Ice Cream Sandwich"));
-
+        TeamMenu tm = new TeamMenu(R.drawable.chouxastry, "Brownis Activity", 18000);
+        teams.add(tm);
+        tm = new TeamMenu(R.drawable.croissant, "Chocolate Pappermint", 23000);
+        teams.add(tm);
+        tm = new TeamMenu(R.drawable.curriedbeef, "Fudgi Brownies", 25000);
+        teams.add(tm);
+        tm = new TeamMenu(R.drawable.danishpastry, "Fudgi Pecan", 20000);
+        teams.add(tm);
 
         menuAdapter adapter = new menuAdapter(this, teams);
         teamsView.setAdapter(adapter);
@@ -63,11 +60,6 @@ public class BrowniesActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.cookies) {
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-            return true;
-        }
         if (id == R.id.cupcakes) {
             Intent intent = new Intent(this, CupcakesActivity.class);
             startActivity(intent);
@@ -78,23 +70,18 @@ public class BrowniesActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        if (id == R.id.donut) {
-            Intent intent = new Intent(this, DonutActivity.class);
-            startActivity(intent);
-            return true;
-        }
         else if (id == R.id.action_logout) {
             session.logout();
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
             finish();
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
     }
     public void onTransactionClicked(int index, Transaction item) {
-        Intent intent = new Intent(this, MenuActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra(TRANSACTION_KEY, item);
         intent.putExtra(INDEX_KEY, 0);
         startActivityForResult(intent, UPDATE_REQUEST);

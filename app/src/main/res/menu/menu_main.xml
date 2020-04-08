@@ -4,12 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.projectuts.MenuActivity"
     >
-    <item
-        android:id="@+id/cookies"
-        android:orderInCategory="100"
-        android:title="Cookies"
-        app:showAsAction="never"
-        />
+
     <item
         android:id="@+id/cupcakes"
         android:orderInCategory="100"
