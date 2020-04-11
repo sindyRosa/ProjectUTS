@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-
+    <color name="colorAccent">#F08080</color>
+    <color name="btnOrder">#CD5C5C</color>
     <color name="btnSignUp">#1c889b</color>
     <color name="btnSignIn">#56c5d9</color>
 

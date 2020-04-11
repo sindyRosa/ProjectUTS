@@ -36,9 +36,8 @@ public class CartActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-//
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setAdapter(adapter);
         final List<TeamMenu> cart = session.getCart();
         final ItemAdapter adapter = new ItemAdapter(this,cart);
         recyclerView.setAdapter(adapter);
@@ -58,7 +57,6 @@ public class CartActivity extends AppCompatActivity {
                 int index = viewHolder.getAdapterPosition();
 
                 cart.remove(index);
-//                adapter.removeCart(index);
                 adapter.notifyDataSetChanged();
                 adapter.removeSession(CartActivity.this);
             }
@@ -73,7 +71,6 @@ public class CartActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -90,6 +87,11 @@ public class CartActivity extends AppCompatActivity {
         }
         if (id == R.id.brownies) {
             Intent intent = new Intent(this, BrowniesActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.Cart) {
+            Intent intent = new Intent(this, CartActivity.class);
             startActivity(intent);
             return true;
         }

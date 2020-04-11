@@ -20,26 +20,19 @@ import java.util.List;
 import com.example.projectuts.adapters.ItemAdapter;
 import com.example.projectuts.R;
 import com.example.projectuts.models.TeamMenu;
-
+//menu adapter ini milik order
 public class menuAdapter extends RecyclerView.Adapter<menuAdapter.ViewHolder> {
 
     private static final String ORDER_KEY = "order";
-    //atribut list data dari model yg akan ditampilkan
     private Context context;
     private List<TeamMenu> items;
-
     ArraySaveOrder orderArray;
-
-   ItemAdapter itemAdapter;
-
-    //Sebuah listener yang telah didefinisikan sebelumnya.
-//    private ItemClickListener listener;
+    ItemAdapter itemAdapter;
 
     public menuAdapter(Context context, List<TeamMenu> items) {
         this.context = context;
         this.items = items;
         this.orderArray = new ArraySaveOrder(this.items.size());
-//        this.listener = listener;
         itemAdapter = new ItemAdapter();
     }
 
@@ -57,20 +50,19 @@ public class menuAdapter extends RecyclerView.Adapter<menuAdapter.ViewHolder> {
         bundle.getParcelable(ORDER_KEY);
 
         final TeamMenu item = items.get(position);
-        //ATUR IMAGE DIBARIS INI, DAPAT MENGGUNAKAN PICASSO ATAU GLIDE
         holder.imageView.setImageResource(item.getLogo());
         holder.judulkue.setText(item.getName());
         holder.hargakue.setText(String.valueOf(item.getHarga()));
         holder.textOrder.setText(String.valueOf(orderArray.orderSave[position]));
 
-        holder.min1.setOnClickListener(new View.OnClickListener() {
+        holder.increment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 orderArray.orderSave[position] += 1;
                 holder.textOrder.setText(String.valueOf(orderArray.orderSave[position]));
             }
         });
-        holder.plus1.setOnClickListener(new View.OnClickListener() {
+        holder.decrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 orderArray.orderSave[position] -= 1;
@@ -78,6 +70,18 @@ public class menuAdapter extends RecyclerView.Adapter<menuAdapter.ViewHolder> {
                     orderArray.orderSave[position] = 0;
                 }
                 holder.textOrder.setText(String.valueOf(orderArray.orderSave[position]));
+            }
+        });
+        holder.order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (orderArray.orderSave[position] != 0) {
+                    Toast.makeText(context, "Pembelian Sukses", Toast.LENGTH_SHORT).show();
+
+                } else{
+                    Toast.makeText(context, "Order minimal 1 item", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
@@ -91,7 +95,7 @@ public class menuAdapter extends RecyclerView.Adapter<menuAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView judulkue, hargakue, textOrder;
-        public Button min1, plus1, order;
+        public Button increment, decrement, order;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
@@ -99,8 +103,8 @@ public class menuAdapter extends RecyclerView.Adapter<menuAdapter.ViewHolder> {
             judulkue = itemView.findViewById(R.id.text_name);
             hargakue = itemView.findViewById(R.id.text_harga);
             textOrder = itemView.findViewById(R.id.text_detail);
-            min1 = itemView.findViewById(R.id.min1);
-            plus1 = itemView.findViewById(R.id.plus1);
+            increment = itemView.findViewById(R.id.increment);
+            decrement = itemView.findViewById(R.id.decrement);
             order = itemView.findViewById(R.id.order);
         }
     }

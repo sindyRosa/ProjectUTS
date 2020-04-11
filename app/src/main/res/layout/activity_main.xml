@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/imageView"
-        app:layout_constraintVertical_bias="0.148"
+        app:layout_constraintVertical_bias="0.113"
         app:srcCompat="@drawable/btn_logo4" />
 
     <TextView
@@ -38,19 +38,21 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonMari"
         android:layout_width="341dp"
         android:layout_height="58dp"
-        android:backgroundTint="#EA392C"
+        android:backgroundTint="#CD5C5C"
         android:fontFamily="serif"
         android:onClick="buttonMari"
         android:text="Mari beli"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,14 +64,12 @@
         android:id="@+id/textView2"
         android:layout_width="125dp"
         android:layout_height="20dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/futura_pt_demibold"
         android:text="Copyright by Sindy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.76"
         tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.Guideline

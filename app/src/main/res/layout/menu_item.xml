@@ -20,6 +20,7 @@
             android:layout_width="0dp"
             android:layout_height="280dp"
             android:adjustViewBounds="true"
+            android:background="#FFB6C1"
             android:scaleType="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,10 +31,10 @@
 
         <TextView
             android:id="@+id/menu_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="396dp"
+            android:layout_height="30dp"
             android:layout_marginEnd="8dp"
-            android:background="#90FFFFFF"
+            android:background="#FFDAB9"
             android:text="Name of Food"
             android:textAlignment="center"
             android:textSize="24sp"

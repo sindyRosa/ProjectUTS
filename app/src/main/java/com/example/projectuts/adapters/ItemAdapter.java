@@ -16,7 +16,7 @@ import com.example.projectuts.models.session;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//item adapter ini milik Cart
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     public List<TeamMenu> data;
     LayoutInflater layoutInflater;

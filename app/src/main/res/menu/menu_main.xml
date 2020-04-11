@@ -27,7 +27,14 @@
         />
 
     <item
-        android:id="@+id/action_logoutn"
+        android:id="@+id/Cart"
+        android:orderInCategory="100"
+        android:title="Cart"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_logout"
         android:orderInCategory="100"
         android:title="Logout"
         app:showAsAction="never"

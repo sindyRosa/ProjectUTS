@@ -5,6 +5,7 @@ class ArraySaveOrder {
 
     public ArraySaveOrder(int length)
     {
+
         this.orderSave = new int [length];
     }
 }
