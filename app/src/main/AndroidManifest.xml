@@ -3,6 +3,8 @@
     package="com.example.projectuts">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,14 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".CupcakesActivity"></activity>
+        <activity android:name=".DonutActivity"></activity>
         <activity android:name=".CartActivity"></activity>
         <activity android:name=".OrderActivity"></activity>
         <activity android:name=".MenuActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".BrowniesActivity"></activity>
+        <activity android:name=".MapsActivity"></activity>
         <activity android:name=".MainActivity">
+            <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyCnY7dFSmHTHJFZX9lN0H71Mhwt3PW_n34"/>
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

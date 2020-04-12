@@ -1,6 +1,5 @@
 package com.example.projectuts;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +17,7 @@ import com.example.projectuts.models.session;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CupcakesActivity extends AppCompatActivity {
+public class DonutActivity extends AppCompatActivity {
     public static final String TRANSACTION_KEY = "TRANSACTION";
     public static final String INDEX_KEY = "INDEX";
     public static final int UPDATE_REQUEST = 2;
@@ -26,19 +25,22 @@ public class CupcakesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cupcakes);
+        setContentView(R.layout.activity_brownies);
 
         RecyclerView teamsView = findViewById(R.id.rv_teams);
 
         List<TeamMenu> teams = new ArrayList<>();
-        TeamMenu tm = new TeamMenu(R.drawable.chocolatemintupcakes, "Brownis Activity", 18000);
+        TeamMenu tm = new TeamMenu(R.drawable.chocolatedonut, "Chocolate Donut", 12000);
         teams.add(tm);
-        tm = new TeamMenu(R.drawable.gingerbreadcupcakes, "Chocolate Pappermint", 23000);
+        tm = new TeamMenu(R.drawable.cookiescreamdonut, "Cookies Cream Donut", 17000);
         teams.add(tm);
-        tm = new TeamMenu(R.drawable.halloweencupcakes, "Fudgi Brownies", 25000);
+        tm = new TeamMenu(R.drawable.bakeddonut, "Baked Donut", 15000);
         teams.add(tm);
-        tm = new TeamMenu(R.drawable.spicedbananacupcakes, "Fudgi Pecan", 20000);
+        tm = new TeamMenu(R.drawable.donutstrawbery, "Donut Strawberry", 18000);
         teams.add(tm);
+        tm = new TeamMenu(R.drawable.rainbowdonut, "Rainbow Donut", 20000);
+        teams.add(tm);
+
         menuAdapter adapter = new menuAdapter(this, teams);
         teamsView.setAdapter(adapter);
 

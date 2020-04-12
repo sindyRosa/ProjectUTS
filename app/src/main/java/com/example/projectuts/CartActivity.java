@@ -90,8 +90,8 @@ public class CartActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        if (id == R.id.Cart) {
-            Intent intent = new Intent(this, CartActivity.class);
+        if (id == R.id.google_maps_key) {
+            Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
             return true;
         }

@@ -27,9 +27,9 @@
         />
 
     <item
-        android:id="@+id/Cart"
+        android:id="@+id/google_maps_key"
         android:orderInCategory="100"
-        android:title="Cart"
+        android:title="Maps"
         app:showAsAction="never"
         />
 

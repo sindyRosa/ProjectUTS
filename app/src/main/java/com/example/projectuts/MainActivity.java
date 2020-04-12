@@ -1,9 +1,11 @@
 package com.example.projectuts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +16,7 @@ import com.example.projectuts.models.TeamMain;
 import com.example.projectuts.models.Transaction;
 import com.example.projectuts.models.session;
 
+import java.nio.channels.AcceptPendingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int UPDATE_REQUEST = 2;
     private Object session;
     private Button buttonMari;
+    private Button maps;
 
 
     @Override
@@ -65,8 +69,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        if (id == R.id.Cart) {
-            Intent intent = new Intent(this, CartActivity.class);
+        if (id == R.id.donut) {
+            Intent intent = new Intent(this, DonutActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.google_maps_key) {
+            Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
             return true;
         }
@@ -78,5 +87,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(TRANSACTION_KEY, item);
         intent.putExtra(INDEX_KEY, 0);
         startActivityForResult(intent, UPDATE_REQUEST);
+    }
+
+    public void maps(View view) {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 }

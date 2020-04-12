@@ -3,16 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"><![CDATA[
     tools:context=".MainActivity">
+
+
+
+    ]]>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="573dp"
         android:layout_height="978dp"
+        android:layout_marginTop="4dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.981"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/btn_pink" />
@@ -24,8 +29,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageView"
-        app:layout_constraintVertical_bias="0.113"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056"
         app:srcCompat="@drawable/btn_logo4" />
 
     <TextView
@@ -44,8 +49,8 @@
 
     <Button
         android:id="@+id/buttonMari"
-        android:layout_width="341dp"
-        android:layout_height="58dp"
+        android:layout_width="321dp"
+        android:layout_height="54dp"
         android:backgroundTint="#CD5C5C"
         android:fontFamily="serif"
         android:onClick="buttonMari"
@@ -55,16 +60,29 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.504"
+        app:layout_constraintVertical_bias="0.356"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/map"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:onClick="maps"
+        android:text="Maps"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMari"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="153dp" />
+
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="125dp"
         android:layout_height="20dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:fontFamily="@font/futura_pt_demibold"
         android:text="Copyright by Sindy"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,4 +103,5 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

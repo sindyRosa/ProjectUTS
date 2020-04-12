@@ -18,10 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 //item adapter ini milik Cart
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
-    public List<TeamMenu> data;
+    public static List<TeamMenu> data;
     LayoutInflater layoutInflater;
     Context c;
-    session session;
+    static session session;
 
     public ItemAdapter(){};
 
@@ -31,7 +31,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         this.layoutInflater = LayoutInflater.from(this.c);
     }
 
-    public void addCart(TeamMenu cart, Context context){
+    public static void addCart(TeamMenu cart, Context context){
         checkSesion(context);
         if (data == null){
             data = new ArrayList<>();
@@ -43,7 +43,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         session.addCart(data);
     }
 
-    private void checkSesion(Context context){
+    private static void checkSesion(Context context){
         if (session == null){
             session = new session(context);
         }
