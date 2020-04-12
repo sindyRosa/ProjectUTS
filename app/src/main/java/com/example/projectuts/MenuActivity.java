@@ -38,6 +38,12 @@ public class MenuActivity extends AppCompatActivity {
         teams.add(tm);
         tm = new MainTeam("https://lh3.googleusercontent.com/-NiRn83pp3Sg/VwS84FZw8rI/AAAAAAAFS5E/V1LT2SZv4_kW4k52ySDgzN6NtArQcbhowCCo/s800-Ic42/donut-mug-cake-23-2.jpg", "DONUT");
         teams.add(tm);
+        tm = new MainTeam("https://www.cookingclassy.com/wp-content/uploads/2017/05/tres-leches-cake-66-768x1152.jpg", "CAKES");
+        teams.add(tm);
+        tm = new MainTeam("https://www.cookingclassy.com/wp-content/uploads/2018/07/lemon-poppy-seed-ricotta-cookies-3-768x1152.jpg", "COOKIES");
+        teams.add(tm);
+        tm = new MainTeam("https://www.cookingclassy.com/wp-content/uploads/2014/02/carrot-zucchini-bread3-edit2+srgb..jpg", "BREAD");
+        teams.add(tm);
         MainAdapter adapter = new MainAdapter(this, teams);
         teamsView.setAdapter(adapter);
 
@@ -73,20 +79,13 @@ public class MenuActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        if (id == R.id.google_maps_key) {
-            Intent intent = new Intent(this, MapsActivity.class);
-            startActivity(intent);
-            return true;
-        }
         else if (id == R.id.action_logout) {
-            session.logout();
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
             finish();
             return true;
         }
-
-        return false;
+        return super.onOptionsItemSelected(item);
     }
     public void onTransactionClicked(int index, Transaction item) {
         Intent intent = new Intent(this, MainActivity.class);

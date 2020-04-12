@@ -26,12 +26,6 @@
         app:showAsAction="never"
         />
 
-    <item
-        android:id="@+id/google_maps_key"
-        android:orderInCategory="100"
-        android:title="Maps"
-        app:showAsAction="never"
-        />
 
     <item
         android:id="@+id/action_logout"

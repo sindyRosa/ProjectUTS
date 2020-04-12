@@ -26,13 +26,13 @@ public class menuAdapter extends RecyclerView.Adapter<menuAdapter.ViewHolder> {
     private static final String ORDER_KEY = "order";
     private Context context;
     private List<TeamMenu> items;
-    ArraySaveOrder orderArray;
+    ArraySaveOrder order;
     ItemAdapter itemAdapter;
 
     public menuAdapter(Context context, List<TeamMenu> items) {
         this.context = context;
         this.items = items;
-        this.orderArray = new ArraySaveOrder(this.items.size());
+        this.order = new ArraySaveOrder(this.items.size());
         itemAdapter = new ItemAdapter();
     }
 
@@ -53,29 +53,29 @@ public class menuAdapter extends RecyclerView.Adapter<menuAdapter.ViewHolder> {
         holder.imageView.setImageResource(item.getLogo());
         holder.judulkue.setText(item.getName());
         holder.hargakue.setText(String.valueOf(item.getHarga()));
-        holder.textOrder.setText(String.valueOf(orderArray.orderSave[position]));
+        holder.textOrder.setText(String.valueOf(order.orderSave[position]));
 
         holder.increment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                orderArray.orderSave[position] += 1;
-                holder.textOrder.setText(String.valueOf(orderArray.orderSave[position]));
+                order.orderSave[position] += 1;
+                holder.textOrder.setText(String.valueOf(order.orderSave[position]));
             }
         });
         holder.decrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                orderArray.orderSave[position] -= 1;
-                if (orderArray.orderSave[position] < 0) {
-                    orderArray.orderSave[position] = 0;
+                order.orderSave[position] -= 1;
+                if (order.orderSave[position] < 0) {
+                    order.orderSave[position] = 0;
                 }
-                holder.textOrder.setText(String.valueOf(orderArray.orderSave[position]));
+                holder.textOrder.setText(String.valueOf(order.orderSave[position]));
             }
         });
         holder.order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (orderArray.orderSave[position] != 0) {
+                if (order.orderSave[position] != 0) {
                     Toast.makeText(context, "Pembelian Sukses", Toast.LENGTH_SHORT).show();
 
                 } else{

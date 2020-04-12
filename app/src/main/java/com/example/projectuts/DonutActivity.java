@@ -76,20 +76,13 @@ public class DonutActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        if (id == R.id.google_maps_key) {
-            Intent intent = new Intent(this, MapsActivity.class);
-            startActivity(intent);
-            return true;
-        }
         else if (id == R.id.action_logout) {
-            session.logout();
             Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
             finish();
             return true;
         }
-
-        return false;
+        return super.onOptionsItemSelected(item);
     }
     public void onTransactionClicked(int index, Transaction item) {
         Intent intent = new Intent(this, MainActivity.class);

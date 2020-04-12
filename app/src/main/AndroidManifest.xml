@@ -16,12 +16,10 @@
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".CupcakesActivity"></activity>
         <activity android:name=".DonutActivity"></activity>
-        <activity android:name=".CartActivity"></activity>
         <activity android:name=".OrderActivity"></activity>
         <activity android:name=".MenuActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".BrowniesActivity"></activity>
-        <activity android:name=".MapsActivity"></activity>
         <activity android:name=".MainActivity">
             <meta-data
                 android:name="com.google.android.geo.API_KEY"

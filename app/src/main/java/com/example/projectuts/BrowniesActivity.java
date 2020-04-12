@@ -40,6 +40,7 @@ public class BrowniesActivity extends AppCompatActivity {
         tm = new TeamMenu(R.drawable.danishpastry, "Fudgi Pecan", 20000);
         teams.add(tm);
 
+
         menuAdapter adapter = new menuAdapter(this, teams);
         teamsView.setAdapter(adapter);
 
@@ -75,20 +76,13 @@ public class BrowniesActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
-        if (id == R.id.google_maps_key) {
-            Intent intent = new Intent(this, MapsActivity.class);
-            startActivity(intent);
-            return true;
-        }
         else if (id == R.id.action_logout) {
-            session.logout();
             Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
             finish();
             return true;
         }
-
-        return false;
+        return super.onOptionsItemSelected(item);
     }
     public void onTransactionClicked(int index, Transaction item) {
         Intent intent = new Intent(this, MainActivity.class);
