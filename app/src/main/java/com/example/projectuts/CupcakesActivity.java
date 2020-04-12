@@ -31,13 +31,13 @@ public class CupcakesActivity extends AppCompatActivity {
         RecyclerView teamsView = findViewById(R.id.rv_teams);
 
         List<TeamMenu> teams = new ArrayList<>();
-        TeamMenu tm = new TeamMenu(R.drawable.chocolatemintupcakes, "Brownis Activity", 18000);
+        TeamMenu tm = new TeamMenu(R.drawable.chocolatemintupcakes, "Chocolate Mint Cupcakes", 18000);
         teams.add(tm);
-        tm = new TeamMenu(R.drawable.gingerbreadcupcakes, "Chocolate Pappermint", 23000);
+        tm = new TeamMenu(R.drawable.gingerbreadcupcakes, "Ginger Bread Cupcakes", 23000);
         teams.add(tm);
-        tm = new TeamMenu(R.drawable.halloweencupcakes, "Fudgi Brownies", 25000);
+        tm = new TeamMenu(R.drawable.halloweencupcakes, "Hallowen Cupcakes", 25000);
         teams.add(tm);
-        tm = new TeamMenu(R.drawable.spicedbananacupcakes, "Fudgi Pecan", 20000);
+        tm = new TeamMenu(R.drawable.spicedbananacupcakes, "Spiced Banana Cupcakes", 20000);
         teams.add(tm);
         menuAdapter adapter = new menuAdapter(this, teams);
         teamsView.setAdapter(adapter);

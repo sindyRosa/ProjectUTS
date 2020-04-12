@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonContact(View view) {
-        Uri uri = Uri.parse("https://instagram.com/berrys_malang?igshid=sj6q1yf756f");
+        Uri uri = Uri.parse("https://instagram.com/rossa.bakery?igshid=186ejyan48ia9");
         Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
 
         likeIng.setPackage("com.instagram.android");
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(likeIng);
         } catch (ActivityNotFoundException e){
             startActivity(new Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://instagram.com/berrys_malang?igshid=sj6q1yf756f")));
+                Uri.parse("https://instagram.com/rossa.bakery?igshid=186ejyan48ia9")));
         }
     }
     public void buttonMaps(View view) {

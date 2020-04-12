@@ -63,7 +63,7 @@
                     android:layout_height="39dp"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="15dp"
-                    android:text="Total       :"
+                    android:text="Jumlah       :"
                     android:textAlignment="center"
                     android:textSize="30sp"
                     android:textStyle="bold" />
